@@ -1,0 +1,77 @@
+	\documentclass[11pt,oneside,a4paper]{scrartcl}
+
+% font encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[headsepline, footsepline]{scrpage2}
+\raggedbottom
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{pgffor}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[bold]{complexity}
+
+% page formatting
+\geometry{a4paper, top=30mm, left=20mm, right=20mm, bottom=30mm, headsep=10mm, footskip=10mm}
+\KOMAoption{parskip}{half-}
+\pagestyle{scrheadings}
+
+% language selection
+\usepackage[ngerman]{babel}
+
+
+% page header and footer
+\clearscrheadfoot
+\ihead{\textsc{Übungsblatt \arabic{blatt}}\\}
+\chead{\textsc{Übungen zur Logik\\Vorname~Nachname~[000000] Vorname~Nachname~[000000]}}
+\ohead{\textsc{Seite \pagemark}\\}
+\ifoot{\textsc{}}
+\cfoot{\textsc{WS 2013/14}}
+\ofoot{\textsc{}}
+\KOMAoption{cleardoublepage}{scrheadings}
+
+% Counter der den Namen des Blatt festlegt
+\newcounter{blatt}
+% Counter für die Theoreme
+\newcounter{ctheorem}[blatt]
+% Counter für die Aufgaben nummern
+\newcounter{caufgabe}[blatt]
+% Counter für die Antworten nummern
+\newcounter{cantwort}[blatt]
+
+\newenvironment{aufgabe}[2]{\stepcounter{caufgabe}\noindent\textbf{Aufgabe \arabic{blatt}.\arabic{caufgabe}} [#1]\hfill\textbf{#2}\par}{}
+\newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[1.]}{\end{enumerate}\vspace{5mm}}
+\newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{\vspace{5mm}}
+\newenvironment{subantworten}{\begin{enumerate}[a]\renewcommand\labelenumi{\bfseries\theenumi)}}{\end{enumerate}}
+\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort }[#2]\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
+\newenvironment{zusatzantwort}[2][]{\noindent\textbf{Zusatzantwort }[#2]\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
+% Erster Parameter: Labelname. Zweiter Parameter: Text in der Kopfzeile
+\newenvironment{lemma}[1][]{\stepcounter{ctheorem}\noindent\textbf{Lemma \arabic{blatt}.\arabic{ctheorem}: [#1]} \\}{}
+\newenvironment{beweis}[1][]{\noindent\textbf{Beweis #1}\\}{\hfill$\Box$\\}
+
+% Options
+\input{options.tex}
+\begin{document}
+\IfFileExists{Quiz.tex} {
+	\input{Quiz.tex}
+} {}
+\foreach \c in {1,...,\maxAufgabe}{
+	\stepcounter{cantwort}
+	\IfFileExists{Aufgabe\c} {%
+		\input{Aufgabe\c}%
+
+        }{%
+                % files does not exist, so nothing to do
+        }%
+}
+
+\end{document}
+\IfFileExists{Zusatz.tex} {
+	\input{Zusatz}
+} {}
