@@ -49,10 +49,10 @@
 
 %\newenvironment{aufgabe}[2]{\stepcounter{caufgabe}\noindent\textbf{Aufgabe \arabic{blatt}.\arabic{caufgabe}} [#1]\hfill\textbf{#2}\par}{}
 \newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[label=\textbf{\arabic*.}]}{\end{enumerate}\vspace{5mm}}
-\newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{\vspace{5mm}}
+\newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{\vspace{5mm}}
 \newenvironment{subantworten}{\begin{enumerate}[label=\textbf{\alph*)}]}{\end{enumerate}}
-\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
-\newenvironment{zusatz}[2][]{\noindent\textbf{Zusatzantwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
+\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
+\newenvironment{zusatz}[2][]{\noindent\textbf{Zusatzantwort [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
 % Erster Parameter: Labelname. Zweiter Parameter: Text in der Kopfzeile
 %\newenvironment{lemma}[1][]{\stepcounter{ctheorem}\noindent\textbf{Lemma \arabic{blatt}.\arabic{ctheorem}: [#1]} \\}{}
 %\newenvironment{beweis}[1][]{\noindent\textbf{Beweis #1}\\}{\hfill$\Box$\\}
@@ -69,7 +69,9 @@
 		\input{Aufgabe\c}%
 
         }{%
-                % files does not exist, so nothing to do
+			\begin{antwort}[?]{Fehlende Aufgabe}
+			\end{antwort} %
+
         }%
 }
 
