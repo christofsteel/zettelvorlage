@@ -2,6 +2,7 @@
 
 % font encoding
 \usepackage[T1]{fontenc}
+\usepackage{titling}
 \usepackage[utf8]{inputenc}
 \usepackage[headsepline, footsepline]{scrpage2}
 \raggedbottom
@@ -9,6 +10,7 @@
 \usepackage{lmodern}
 \usepackage{enumerate}
 \usepackage{pgffor}
+\usepackage{stmaryd}
 
 % AMS packages
 \usepackage{amsmath}
@@ -29,7 +31,7 @@
 % page header and footer
 \clearscrheadfoot
 \ihead{\textsc{Übungsblatt \arabic{blatt}}\\}
-\chead{\textsc{Übungen zur Logik\\\theauthor}}
+\chead{\textsc{\veranstaltung\\\theauthor}}
 \ohead{\textsc{Seite \pagemark}\\}
 \ifoot{\textsc{}}
 \cfoot{\textsc{WS 2013/14}}
@@ -39,21 +41,21 @@
 % Counter der den Namen des Blatt festlegt
 \newcounter{blatt}
 % Counter für die Theoreme
-\newcounter{ctheorem}[blatt]
+%\newcounter{ctheorem}[blatt]
 % Counter für die Aufgaben nummern
-\newcounter{caufgabe}[blatt]
+%\newcounter{caufgabe}[blatt]
 % Counter für die Antworten nummern
 \newcounter{cantwort}[blatt]
 
-\newenvironment{aufgabe}[2]{\stepcounter{caufgabe}\noindent\textbf{Aufgabe \arabic{blatt}.\arabic{caufgabe}} [#1]\hfill\textbf{#2}\par}{}
+%\newenvironment{aufgabe}[2]{\stepcounter{caufgabe}\noindent\textbf{Aufgabe \arabic{blatt}.\arabic{caufgabe}} [#1]\hfill\textbf{#2}\par}{}
 \newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[1.]}{\end{enumerate}\vspace{5mm}}
 \newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{\vspace{5mm}}
 \newenvironment{subantworten}{\begin{enumerate}[a]\renewcommand\labelenumi{\bfseries\theenumi)}}{\end{enumerate}}
-\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort }[#2]\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
-\newenvironment{zusatzantwort}[2][]{\noindent\textbf{Zusatzantwort }[#2]\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
+\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
+\newenvironment{zusatz}[2][]{\noindent\textbf{Zusatzantwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
 % Erster Parameter: Labelname. Zweiter Parameter: Text in der Kopfzeile
-\newenvironment{lemma}[1][]{\stepcounter{ctheorem}\noindent\textbf{Lemma \arabic{blatt}.\arabic{ctheorem}: [#1]} \\}{}
-\newenvironment{beweis}[1][]{\noindent\textbf{Beweis #1}\\}{\hfill$\Box$\\}
+%\newenvironment{lemma}[1][]{\stepcounter{ctheorem}\noindent\textbf{Lemma \arabic{blatt}.\arabic{ctheorem}: [#1]} \\}{}
+%\newenvironment{beweis}[1][]{\noindent\textbf{Beweis #1}\\}{\hfill$\Box$\\}
 
 % Options
 \input{options.tex}
@@ -71,7 +73,7 @@
         }%
 }
 
-\end{document}
 \IfFileExists{Zusatz.tex} {
 	\input{Zusatz}
 } {}
+\end{document}

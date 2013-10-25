@@ -1,3 +1,4 @@
 \setcounter{blatt}{1}
 \newcommand\maxAufgabe{2}
+\newcommand\veranstaltung{Übungen zur Vorlesung Logik für Informatiker}
 \author{Vorname~Nachname~[000000] Vorname~Nachname~[000000]}
