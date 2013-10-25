@@ -8,7 +8,7 @@
 \raggedbottom
 \usepackage{geometry}
 \usepackage{lmodern}
-\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{pgffor}
 \usepackage{stmaryrd}
 
@@ -48,9 +48,9 @@
 \newcounter{cantwort}[blatt]
 
 %\newenvironment{aufgabe}[2]{\stepcounter{caufgabe}\noindent\textbf{Aufgabe \arabic{blatt}.\arabic{caufgabe}} [#1]\hfill\textbf{#2}\par}{}
-\newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[1.]}{\end{enumerate}\vspace{5mm}}
+\newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[label=\textbf{\arabic*.}]}{\end{enumerate}\vspace{5mm}}
 \newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{\vspace{5mm}}
-\newenvironment{subantworten}{\begin{enumerate}[a]\renewcommand\labelenumi{\bfseries\theenumi)}}{\end{enumerate}}
+\newenvironment{subantworten}{\begin{enumerate}[label=\textbf{\alph*)}]}{\end{enumerate}}
 \newenvironment{antwort*}[2][]{\noindent\textbf{Antwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
 \newenvironment{zusatz}[2][]{\noindent\textbf{Zusatzantwort [#2]}\hfill $\underline{\;\;\;}$/#1 Punkte\\}{}
 % Erster Parameter: Labelname. Zweiter Parameter: Text in der Kopfzeile
@@ -76,4 +76,4 @@
 \IfFileExists{Zusatz.tex} {
 	\input{Zusatz}
 } {}
-\end{document}
+	\end{document}
