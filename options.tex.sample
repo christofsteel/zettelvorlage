@@ -1,4 +1,14 @@
+% Die Nummer des aktuellen Übungsblatt
 \setcounter{blatt}{1}
+
+% Die höchste Aufgabennummer 
 \newcommand\maxAufgabe{2}
+
+% Der Titel der Veranstaltung
 \newcommand\veranstaltung{Übungen zur Vorlesung Logik für Informatiker}
+
+% Der Autor des Blattes
 \author{Vorname~Nachname~[000000] Vorname~Nachname~[000000]}
+
+% Das aktuelle Semester
+\newcommand\semester{WiSe 2013/14}
