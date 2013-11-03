@@ -2,10 +2,13 @@
 \setcounter{blatt}{1}
 
 % Die höchste Aufgabennummer 
-\newcommand\maxAufgabe{2}
+\newcommand\maxAufgabe{5}
 
 % Der Titel der Veranstaltung
 \newcommand\veranstaltung{Übungen zur Vorlesung Logik für Informatiker}
+
+% Die Abgabegruppe
+\newcommand\gruppe{Di 16-18 Uhr}
 
 % Der Autor des Blattes
 \author{Vorname~Nachname~[000000] Vorname~Nachname~[000000]}
