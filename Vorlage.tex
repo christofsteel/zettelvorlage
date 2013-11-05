@@ -47,10 +47,15 @@
 \newcounter{cantwort}[blatt]
 
 \newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[label=\textbf{\arabic*.}]}{\end{enumerate}\vspace{5mm}}
-\newenvironment{antwort}[2][]{\noindent\textbf{Antwort \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{\vspace{5mm}}
+\newenvironment{antwort}[2][]{\noindent\textbf{\stringantwort{} \arabic{blatt}.\arabic{cantwort} [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{\vspace{5mm}}
 \newenvironment{subantworten}{\begin{enumerate}[label=\textbf{\alph*)}]}{\end{enumerate}}
-\newenvironment{antwort*}[2][]{\noindent\textbf{Antwort [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
-\newenvironment{zusatz}[2][]{\noindent\textbf{Zusatzantwort [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
+\newenvironment{antwort*}[2][]{\noindent\textbf{\stringantwort{} [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
+\newenvironment{zusatz}[2][]{\noindent\textbf{\stringzusatzantwort{} [#2]}\hfill $\underline{\quad}\,$/#1 Punkte\\}{}
+
+%Default Werte für Options
+
+\newcommand\stringantwort{Antwort}
+\newcommand\stringzusatzantwort{Zusatzantwort}
 
 % Options
 \input{options.tex}

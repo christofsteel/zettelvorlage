@@ -15,3 +15,9 @@
 
 % Das aktuelle Semester
 \newcommand\semester{WiSe 2013/14}
+
+% String, der vor Antworten angezeigt wird. Default: Antwort
+% \renewcommand\stringantwort{Antwort}
+
+% String, der vor Zusatzantworten angezeigt wird. Default: Zusatzantwort
+% \renewcommand\stringzusatzantwort{Zusatzantwort}
