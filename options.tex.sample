@@ -1,6 +1,9 @@
 % Die Nummer des aktuellen Übungsblatt
 \setcounter{blatt}{1}
 
+% (Optional) Falls Abgaben in verschiedene Blöcke eingeteilt sind, kann hier der Block definiert werden
+%\newcommand\block{A}
+
 % Die höchste Aufgabennummer 
 \newcommand\maxAufgabe{5}
 

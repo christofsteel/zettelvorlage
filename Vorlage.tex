@@ -31,13 +31,17 @@
 % language selection
 \usepackage[ngerman]{babel}
 
+\newcommand\blocktext{%
+\ifdefined\block%
+Block \block%
+\else\fi}
 
 % page header and footer
 \clearscrheadfoot
 \ihead{\textsc{Übungsblatt \arabic{blatt}}\\\textsc{\gruppe}}
 \chead{\textsc{\veranstaltung\\\theauthor}}
 \ohead{\textsc{Seite \pagemark}\\}
-\ifoot{\textsc{}}
+\ifoot{\textsc{\blocktext}}
 \cfoot{\textsc{\semester}}
 \ofoot{\textsc{}}
 \KOMAoption{cleardoublepage}{scrheadings}
@@ -45,6 +49,9 @@
 % Counter der den Namen des Blatt festlegt
 \newcounter{blatt}
 \newcounter{cantwort}[blatt]
+
+
+
 
 \newenvironment{quiz}[1][]{\noindent\textbf{Quizfragen #1}\begin{enumerate}[label=\textbf{\arabic*.}]}{\end{enumerate}\vspace{5mm}}
 \newenvironment{antwort}[2][]{\noindent\textbf{\stringantwort{} \arabic{blatt}.\arabic{cantwort} \ifx&#2&%
